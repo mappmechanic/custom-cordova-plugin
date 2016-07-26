@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="mappmechanic-customplugin"
+    version="0.2.11">
+    <name>CustomPlugin</name>
+    <description>The Custom Plugin Development Example</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,coolest</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="src/www/CustomPlugin.js" name="CustomPlugin">
+        <clobbers target="CustomPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CustomPlugin" >
+                <param name="android-package" value="CustomPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/CustomPlugin.java" target-dir="src/" />
+    </platform>
+
+</plugin>
